@@ -18,7 +18,7 @@
             <div class="body">
                 <h2>Body</h2>
                 <textarea name="post[body]" placeholder="You did good jobs!!">{{ old('post.body') }}</textarea>
-                <p class="body__error" style="color:red"> {{ $errors->first('post.title')}} </p>
+                <p class="body__error" style="color:red"> {{ $errors->first('post.body')}} </p>
             </div>
             <input type="submit" value="store">
         </form>
