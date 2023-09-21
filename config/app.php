@@ -108,7 +108,8 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    //'faker_locale' => 'en_US',
+    'faker_locale' => 'ja_jp',
 
     /*
     |--------------------------------------------------------------------------
@@ -181,6 +182,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
 
         /*
          * Package Service Providers...

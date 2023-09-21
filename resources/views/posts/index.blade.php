@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    
-    </head>
+ <x-app-layout>
+  <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('My Page') }}
+        </h2>
+    </x-slot>
     <body　class="antialiased">
-        <h1>Blog Name</h1>
+        <h1>My Page</h1>
         <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach ($posts as $post)
               <div class='post'>
                   <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title}}</h2></a>
+                  <a href="">{{ $post->category->name }}</a>
                   <p class='body'>{{ $post->body }}</p>
               </div>
             @endforeach  
+            <h1 class='user_name'>ログインユーザー;{{ Auth::user()->name }}</h1>
         </div>
         <div class='paginate'>{{$posts->links()}}</div>
     </body>
+ </x-app-layout>
 </html>
